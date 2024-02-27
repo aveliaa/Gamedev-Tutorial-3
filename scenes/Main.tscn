@@ -15,7 +15,13 @@ position = Vector2( 794, 292 )
 position = Vector2( 225.95, 294.562 )
 
 [node name="Ground4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1147, 293 )
+position = Vector2( 1145, 293 )
+
+[node name="Ground5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1498, 295 )
+
+[node name="Ground6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1852, 294 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -69, 3 )
