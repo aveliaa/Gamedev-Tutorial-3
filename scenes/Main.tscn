@@ -1,31 +1,89 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/rocks1_3.png" type="Texture" id=3]
+[ext_resource path="res://assets/rocks1_5.png" type="Texture" id=4]
+[ext_resource path="res://assets/pointer.png" type="Texture" id=5]
+[ext_resource path="res://assets/grass3.png" type="Texture" id=6]
+[ext_resource path="res://assets/grass1.png" type="Texture" id=7]
+[ext_resource path="res://assets/grass2.png" type="Texture" id=8]
 
 [node name="Root" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource( 1 )]
-position = Vector2( 507.708, 363.86 )
+position = Vector2( 509.708, 367.86 )
 
 [node name="Ground2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 794, 292 )
+position = Vector2( 857, 299 )
 
 [node name="Ground3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 225.95, 294.562 )
+position = Vector2( 162, 299 )
 
 [node name="Ground4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1145, 293 )
+position = Vector2( 1206, 299 )
 
 [node name="Ground5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1498, 295 )
+position = Vector2( 1556, 89 )
 
 [node name="Ground6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1852, 294 )
+position = Vector2( 1904, 89 )
+
+[node name="Ground7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2304, -97 )
+
+[node name="Ground8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2652, -97 )
+
+[node name="Ground9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3001, -97 )
+
+[node name="Ground10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3349, -97 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -69, 3 )
+position = Vector2( -129, -137 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 256, 221 )
 current = true
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="background"]
+position = Vector2( 858, 224 )
+scale = Vector2( 1.96875, 1.96875 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="background"]
+position = Vector2( 1516, 37 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="background"]
+position = Vector2( 348, 196 )
+scale = Vector2( 1.6875, 1.375 )
+texture = ExtResource( 7 )
+offset = Vector2( -17.1852, 49.4545 )
+
+[node name="Sprite4" type="Sprite" parent="background"]
+position = Vector2( 484, 264 )
+scale = Vector2( 1.6875, 1.375 )
+texture = ExtResource( 7 )
+offset = Vector2( -17.1852, 49.4545 )
+
+[node name="Sprite5" type="Sprite" parent="background"]
+position = Vector2( 1549, 52 )
+scale = Vector2( 2.0625, 1.3125 )
+texture = ExtResource( 8 )
+
+[node name="Sprite6" type="Sprite" parent="background"]
+position = Vector2( 2199, -142 )
+scale = Vector2( 3.09375, 2.9375 )
+texture = ExtResource( 6 )
+
+[node name="finish" type="Node2D" parent="."]
+
+[node name="finish sign" type="Sprite" parent="finish"]
+position = Vector2( 3486, -190 )
+scale = Vector2( 1.9375, 2.21875 )
+texture = ExtResource( 5 )

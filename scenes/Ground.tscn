@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/snow.png" type="Texture" id=1]
+[ext_resource path="res://assets/tile70.png" type="Texture" id=2]
+[ext_resource path="res://assets/tile73.png" type="Texture" id=3]
+[ext_resource path="res://assets/tile72.png" type="Texture" id=4]
+[ext_resource path="res://assets/tile71.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 175.9, 35 )
@@ -8,23 +11,29 @@ extents = Vector2( 175.9, 35 )
 [node name="Ground" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( -0.5, 0.5 )
+scale = Vector2( 1.47917, 1.4375 )
+texture = ExtResource( 4 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 70.395, 0 )
-texture = ExtResource( 1 )
+position = Vector2( 71, 0.5 )
+scale = Vector2( 1.5, 1.4375 )
+texture = ExtResource( 3 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( -140.79, 0 )
-texture = ExtResource( 1 )
+position = Vector2( -139.947, 0.500001 )
+scale = Vector2( 1.45615, 1.4375 )
+texture = ExtResource( 2 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( -70.395, 0 )
-texture = ExtResource( 1 )
+position = Vector2( 141, 0.5 )
+scale = Vector2( 1.4375, 1.4375 )
+texture = ExtResource( 5 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 140.79, 0 )
-texture = ExtResource( 1 )
+position = Vector2( -70.5, 0.5 )
+scale = Vector2( 1.4375, 1.4375 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
