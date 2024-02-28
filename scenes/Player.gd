@@ -138,6 +138,7 @@ func _physics_process(delta):
 
 func _on_hit_body_entered(body):
 	if body.name == "Slime":
+		$"slime-hit".play()
 		body.queue_free()
 
 	
@@ -183,6 +184,7 @@ func crouch():
 	$attack.hide()
 
 func jump():
+	$"jump-sound".play()
 	animation.play("jump")
 	$jump.flip_h = (movement_history == "left")
 	$jump.show()
@@ -193,6 +195,7 @@ func jump():
 	$attack.hide()
 	
 func attack():
+	$swing.play()
 	animation.play("attack")
 	$attack.show()
 	

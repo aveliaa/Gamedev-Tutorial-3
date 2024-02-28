@@ -1,7 +1,26 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Run+Attack.png" type="Texture" id=1]
-[ext_resource path="res://scenes/slime.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"slime-idle\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -38,7 +57,7 @@ tracks/0/keys = {
 radius = 17.0
 
 [node name="slime" type="Node2D"]
-script = ExtResource( 2 )
+script = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )

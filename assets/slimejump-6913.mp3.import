@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slimejump-6913.mp3-5d3d95ac496d4aa0b97cdb1f6933a6b0.mp3str"
+
+[deps]
+
+source_file="res://assets/slimejump-6913.mp3"
+dest_files=[ "res://.import/slimejump-6913.mp3-5d3d95ac496d4aa0b97cdb1f6933a6b0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

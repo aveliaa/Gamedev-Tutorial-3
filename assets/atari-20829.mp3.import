@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/atari-20829.mp3-54aa0b7fa9abd1d6ca562708aae2112f.mp3str"
+
+[deps]
+
+source_file="res://assets/atari-20829.mp3"
+dest_files=[ "res://.import/atari-20829.mp3-54aa0b7fa9abd1d6ca562708aae2112f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

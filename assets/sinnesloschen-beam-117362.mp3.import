@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sinnesloschen-beam-117362.mp3-92b0e9e6be7d96d950566547b00eed07.mp3str"
+
+[deps]
+
+source_file="res://assets/sinnesloschen-beam-117362.mp3"
+dest_files=[ "res://.import/sinnesloschen-beam-117362.mp3-92b0e9e6be7d96d950566547b00eed07.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

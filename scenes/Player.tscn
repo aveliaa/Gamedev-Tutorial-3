@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Idle.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://assets/Jump.png" type="Texture" id=4]
 [ext_resource path="res://assets/Run.png" type="Texture" id=5]
 [ext_resource path="res://assets/Attack_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/swing-whoosh-110410.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/slimejump-6913.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/jumping-on-wooden-floor-41234.mp3" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.3125, 43.5 )
@@ -239,5 +242,14 @@ disabled = true
 position = Vector2( 197, 229 )
 shape = SubResource( 10 )
 disabled = true
+
+[node name="slime-hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="jump-sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
