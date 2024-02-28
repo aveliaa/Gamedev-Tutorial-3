@@ -95,8 +95,10 @@ func attack():
 	
 	if movement_history == "left":
 		$attack.flip_h = true
+		$"hit/hit-area-left".disabled = false
 	else:
 		$attack.flip_h = false
+		$"hit/hit-area-right".disabled = false
 	
 	
 
@@ -195,14 +197,14 @@ func get_input():
 	
 	#Attacking
 	if Input.is_action_just_pressed("attack"):
-		$"hit/hit-area".disabled = false
 		is_attacking = true
 		attack()
 	
 	if Input.is_action_just_released("attack"):
 		yield(get_tree().create_timer(1), "timeout")
 		is_attacking = false
-		$"hit/hit-area".disabled = true
+		$"hit/hit-area-left".disabled = true
+		$"hit/hit-area-right".disabled = true
 		
 	
 func _physics_process(delta):
