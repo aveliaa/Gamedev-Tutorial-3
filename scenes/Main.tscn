@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -60,8 +60,287 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
 [sub_resource type="CircleShape2D" id=4]
 radius = 17.0
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -247,7 +526,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 2743, 13 )
+extents = Vector2( 4240, 13 )
 
 [node name="Root" type="Node2D"]
 
@@ -278,8 +557,32 @@ position = Vector2( 2652, -97 )
 [node name="Ground9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3001, -97 )
 
+[node name="Ground11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3622, 159 )
+
+[node name="Ground12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3970, 159 )
+
+[node name="Ground13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4319, 159 )
+
+[node name="Ground14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4668, 159 )
+
+[node name="Ground15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5016, 159 )
+
+[node name="Ground16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5365, 159 )
+
+[node name="Ground17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6090, 61 )
+
+[node name="Ground18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6788, -173 )
+
 [node name="Ground10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3794, -90 )
+position = Vector2( 7222, -373 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -8, -341 )
@@ -298,6 +601,11 @@ max_distance = 2019.0
 
 [node name="Sprite" type="Sprite" parent="background"]
 position = Vector2( 858, 224 )
+scale = Vector2( 1.96875, 1.96875 )
+texture = ExtResource( 4 )
+
+[node name="Sprite19" type="Sprite" parent="background"]
+position = Vector2( 5478, 86 )
 scale = Vector2( 1.96875, 1.96875 )
 texture = ExtResource( 4 )
 
@@ -328,9 +636,10 @@ scale = Vector2( 2.0625, 1.3125 )
 texture = ExtResource( 8 )
 
 [node name="Sprite6" type="Sprite" parent="background"]
-position = Vector2( 2199, -142 )
+position = Vector2( 2616, -231 )
 scale = Vector2( 3.09375, 2.9375 )
 texture = ExtResource( 6 )
+offset = Vector2( -134.788, 30.2979 )
 
 [node name="Sprite7" type="Sprite" parent="background"]
 position = Vector2( 2786, -230 )
@@ -347,6 +656,21 @@ position = Vector2( 2740, -269 )
 scale = Vector2( 2.09376, 3.51562 )
 texture = ExtResource( 13 )
 
+[node name="Sprite22" type="Sprite" parent="background"]
+position = Vector2( 5057.5, 26.875 )
+scale = Vector2( 2.48437, 4.16016 )
+texture = ExtResource( 12 )
+
+[node name="Sprite23" type="Sprite" parent="background"]
+position = Vector2( 5062.5, -101.125 )
+scale = Vector2( 2.60938, 3.86719 )
+texture = ExtResource( 13 )
+
+[node name="Sprite24" type="Sprite" parent="background"]
+position = Vector2( 5011.5, -12.125 )
+scale = Vector2( 2.09376, 3.51562 )
+texture = ExtResource( 13 )
+
 [node name="Sprite16" type="Sprite" parent="background"]
 position = Vector2( 92.0001, 125 )
 scale = Vector2( 2.09376, 3.51562 )
@@ -354,6 +678,16 @@ texture = ExtResource( 13 )
 
 [node name="Sprite11" type="Sprite" parent="background"]
 position = Vector2( 2045, 38 )
+scale = Vector2( 1.96094, 3.52735 )
+texture = ExtResource( 11 )
+
+[node name="Sprite20" type="Sprite" parent="background"]
+position = Vector2( 3481, 105 )
+scale = Vector2( 1.96094, 3.52735 )
+texture = ExtResource( 11 )
+
+[node name="Sprite21" type="Sprite" parent="background"]
+position = Vector2( 4639, 108 )
 scale = Vector2( 1.96094, 3.52735 )
 texture = ExtResource( 11 )
 
@@ -378,17 +712,35 @@ position = Vector2( 37.75, 167 )
 scale = Vector2( 1.97656, 3.10938 )
 texture = ExtResource( 14 )
 
+[node name="Sprite18" type="Sprite" parent="background"]
+position = Vector2( 6090, -71 )
+scale = Vector2( 1.97656, 3.10938 )
+texture = ExtResource( 14 )
+
 [node name="Sprite15" type="Sprite" parent="background"]
 position = Vector2( 30, 39 )
 scale = Vector2( 3.25, 2.89063 )
 texture = ExtResource( 15 )
 
-[node name="finish" type="Node2D" parent="."]
-
-[node name="finish sign" type="Sprite" parent="finish"]
+[node name="finish sign" type="Sprite" parent="background"]
 position = Vector2( 1050, 207 )
 scale = Vector2( 1.9375, 2.21875 )
 texture = ExtResource( 5 )
+
+[node name="Sprite19" type="Sprite" parent="background/finish sign"]
+position = Vector2( 2597.16, -183.887 )
+scale = Vector2( 1.67742, 1.30282 )
+texture = ExtResource( 15 )
+
+[node name="finish sign2" type="Sprite" parent="background"]
+position = Vector2( 4054, 65 )
+scale = Vector2( 1.9375, 2.21875 )
+texture = ExtResource( 5 )
+
+[node name="Sprite19" type="Sprite" parent="background/finish sign2"]
+position = Vector2( 517.677, -89.2394 )
+scale = Vector2( 1.67742, 1.30282 )
+texture = ExtResource( 15 )
 
 [node name="slime-root" type="Node2D" parent="."]
 script = ExtResource( 10 )
@@ -408,12 +760,204 @@ script = ExtResource( 17 )
 anims/RESET = SubResource( 7 )
 anims/slime-idle = SubResource( 8 )
 
+[node name="Slime" type="StaticBody2D" parent="slime-root/Path2D/PathFollow2D/Slime"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root/Path2D/PathFollow2D/Slime/Slime"]
+anims/RESET = SubResource( 19 )
+anims/slime-idle = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="slime-root/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
 [node name="Sprite" type="Sprite" parent="slime-root/Path2D/PathFollow2D/Slime"]
 position = Vector2( 51, -15 )
 texture = ExtResource( 16 )
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="slime-root4" type="Node2D" parent="."]
+position = Vector2( 1035, 133 )
+script = ExtResource( 10 )
+
+[node name="Path2D" type="Path2D" parent="slime-root4"]
+position = Vector2( -102, 58 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="slime-root4/Path2D"]
+position = Vector2( 2547, -105 )
+rotation = -0.0372987
+
+[node name="Slime" type="StaticBody2D" parent="slime-root4/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root4/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 21 )
+anims/slime-idle = SubResource( 22 )
+
+[node name="Slime" type="StaticBody2D" parent="slime-root4/Path2D/PathFollow2D/Slime"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root4/Path2D/PathFollow2D/Slime/Slime"]
+anims/RESET = SubResource( 23 )
+anims/slime-idle = SubResource( 24 )
+
+[node name="Sprite" type="Sprite" parent="slime-root4/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root4/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="slime-root4/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root4/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="slime-root5" type="Node2D" parent="."]
+position = Vector2( 1615, 125 )
+script = ExtResource( 10 )
+
+[node name="Path2D" type="Path2D" parent="slime-root5"]
+position = Vector2( -102, 58 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="slime-root5/Path2D"]
+position = Vector2( 2547, -105 )
+rotation = -0.0372987
+
+[node name="Slime" type="StaticBody2D" parent="slime-root5/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root5/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 25 )
+anims/slime-idle = SubResource( 26 )
+
+[node name="Slime" type="StaticBody2D" parent="slime-root5/Path2D/PathFollow2D/Slime"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root5/Path2D/PathFollow2D/Slime/Slime"]
+anims/RESET = SubResource( 27 )
+anims/slime-idle = SubResource( 28 )
+
+[node name="Sprite" type="Sprite" parent="slime-root5/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root5/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="slime-root5/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root5/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="slime-root6" type="Node2D" parent="."]
+position = Vector2( 2027, 125 )
+script = ExtResource( 10 )
+
+[node name="Path2D" type="Path2D" parent="slime-root6"]
+position = Vector2( -102, 58 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="slime-root6/Path2D"]
+position = Vector2( 2547, -105 )
+rotation = -0.0372987
+
+[node name="Slime" type="StaticBody2D" parent="slime-root6/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root6/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 29 )
+anims/slime-idle = SubResource( 30 )
+
+[node name="Slime" type="StaticBody2D" parent="slime-root6/Path2D/PathFollow2D/Slime"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root6/Path2D/PathFollow2D/Slime/Slime"]
+anims/RESET = SubResource( 31 )
+anims/slime-idle = SubResource( 32 )
+
+[node name="Sprite" type="Sprite" parent="slime-root6/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root6/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="slime-root6/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root6/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="slime-root7" type="Node2D" parent="."]
+position = Vector2( 2515, 121 )
+script = ExtResource( 10 )
+
+[node name="Path2D" type="Path2D" parent="slime-root7"]
+position = Vector2( -102, 58 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="slime-root7/Path2D"]
+position = Vector2( 2547, -105 )
+rotation = -0.0372987
+
+[node name="Slime" type="StaticBody2D" parent="slime-root7/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root7/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 33 )
+anims/slime-idle = SubResource( 34 )
+
+[node name="Slime" type="StaticBody2D" parent="slime-root7/Path2D/PathFollow2D/Slime"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root7/Path2D/PathFollow2D/Slime/Slime"]
+anims/RESET = SubResource( 35 )
+anims/slime-idle = SubResource( 36 )
+
+[node name="Sprite" type="Sprite" parent="slime-root7/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root7/Path2D/PathFollow2D/Slime/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="slime-root7/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root7/Path2D/PathFollow2D/Slime"]
 position = Vector2( 42, 33 )
 shape = SubResource( 4 )
 
@@ -491,7 +1035,7 @@ Your objective is to meet me.
 Keep walking to the east!"
 
 [node name="goal" type="Area2D" parent="."]
-position = Vector2( 3877, -201 )
+position = Vector2( 7305, -484 )
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
@@ -523,18 +1067,18 @@ anims/archer-idle = SubResource( 16 )
 anims/sorcerer-idle = SubResource( 17 )
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 2865.0
-margin_top = -267.0
-margin_right = 3120.0
-margin_bottom = -217.0
+margin_left = 2963.0
+margin_top = -279.0
+margin_right = 3128.0
+margin_bottom = -229.0
 text = "Keep going!
 I feel your presence!"
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 3502.0
-margin_top = -275.0
-margin_right = 3966.0
-margin_bottom = -227.0
+margin_left = 7235.0
+margin_top = -555.0
+margin_right = 7699.0
+margin_bottom = -507.0
 text = "Good job Hero!
 Welcome to our party!
 Come here!"
@@ -559,17 +1103,16 @@ position = Vector2( 4541, -17.7813 )
 scale = Vector2( 1.20464, 1.33213 )
 texture = ExtResource( 20 )
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
-position = Vector2( -7, 10 )
-scale = Vector2( 2.227, 1.34992 )
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 7309, -18 )
+scale = Vector2( 1.20464, 1.33213 )
 texture = ExtResource( 20 )
 
 [node name="fall" type="Area2D" parent="."]
 script = ExtResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fall"]
-position = Vector2( 2344, 446 )
+position = Vector2( 3841, 446 )
 shape = SubResource( 18 )
 
 [connection signal="body_entered" from="goal" to="goal" method="_on_goal_body_entered"]
