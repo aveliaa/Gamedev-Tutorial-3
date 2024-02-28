@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,11 +15,109 @@
 [ext_resource path="res://assets/rectangle4.png" type="Texture" id=13]
 [ext_resource path="res://assets/trees1_1.png" type="Texture" id=14]
 [ext_resource path="res://assets/rectangle2.png" type="Texture" id=15]
+[ext_resource path="res://assets/Run+Attack.png" type="Texture" id=16]
+[ext_resource path="res://scenes/slime-red.gd" type="Script" id=17]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 0.01
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 2790, -137, 0, 0, 0, 0, 2956, -135, 0, 0, 0, 0, 3100, -134, 0, 0, 0, 0, 3189, -136 )
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 17.0
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "slime-idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
 [node name="Root" type="Node2D"]
@@ -163,6 +261,23 @@ position = Vector2( 2790, -137 )
 rotation = 0.0120551
 
 [node name="slime" parent="slime-root/Path2D/PathFollow2D" instance=ExtResource( 9 )]
+visible = false
+
+[node name="Slime" type="StaticBody2D" parent="slime-root/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 7 )
+anims/slime-idle = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="slime-root/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
 
 [node name="slime-root2" type="Node2D" parent="."]
 position = Vector2( -1, 73 )
@@ -176,7 +291,40 @@ curve = SubResource( 1 )
 position = Vector2( 2790, -137 )
 rotation = 0.0120551
 
+[node name="RigidBody2D" type="RigidBody2D" parent="slime-root2/Path2D/PathFollow2D"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root2/Path2D/PathFollow2D/RigidBody2D"]
+anims/RESET = SubResource( 2 )
+anims/slime-idle = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="slime-root2/Path2D/PathFollow2D/RigidBody2D"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root2/Path2D/PathFollow2D/RigidBody2D"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
+
 [node name="slime" parent="slime-root2/Path2D/PathFollow2D" instance=ExtResource( 9 )]
+visible = false
+
+[node name="Slime" type="StaticBody2D" parent="slime-root2/Path2D/PathFollow2D"]
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="slime-root2/Path2D/PathFollow2D/Slime"]
+anims/RESET = SubResource( 5 )
+anims/slime-idle = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="slime-root2/Path2D/PathFollow2D/Slime"]
+position = Vector2( 51, -15 )
+texture = ExtResource( 16 )
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slime-root2/Path2D/PathFollow2D/Slime"]
+position = Vector2( 42, 33 )
+shape = SubResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 177.0

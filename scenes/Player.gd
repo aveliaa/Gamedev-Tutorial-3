@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-# TODO : perkecil collision saat nunduk, enermy, game over, decor, attack, dash animation
+# TODO : enermy, game over, decor, attack, dash animation
 func _ready():
 	idle()
 	pass # Replace with function body.
@@ -27,6 +27,8 @@ var velocity = Vector2()
 var movement_history = "right"
 var is_running = false
 var is_crouching = false
+var is_attacking = false
+
 
 func idle():
 	animation.play("idle")
@@ -34,6 +36,8 @@ func idle():
 	$walk.hide()
 	$jump.hide()
 	$run.hide()
+	$attack.hide()
+	
 	
 func walk(flip):
 	animation.play("walk")
@@ -42,6 +46,7 @@ func walk(flip):
 	$idle.hide()
 	$jump.hide()
 	$run.hide()
+	$attack.hide()
 	
 func run(flip):
 	print("hi")
@@ -51,12 +56,15 @@ func run(flip):
 	$idle.hide()
 	$jump.hide()
 	$run.show()
+	$attack.hide()
 
 func crouch():
 	animation.play("crouch")
 	$walk.hide()
 	$idle.hide()
 	$run.hide()
+	$attack.hide()
+	
 	
 	if movement_history == "left":
 		$jump.flip_h = true
@@ -69,12 +77,28 @@ func jump():
 	$walk.hide()
 	$idle.hide()
 	$run.hide()
+	$attack.hide()
 	
 	if movement_history == "left":
 		$jump.flip_h = true
 	else:
 		$jump.flip_h = false
 	$jump.show()
+	
+func attack():
+	animation.play("attack")
+	$walk.hide()
+	$idle.hide()
+	$run.hide()
+	$attack.show()
+	$jump.hide()
+	
+	if movement_history == "left":
+		$attack.flip_h = true
+	else:
+		$attack.flip_h = false
+	
+	
 
 func double_tap(direction,last_move_time):
 	var current_time = OS.get_ticks_msec() / 1000.0
@@ -109,7 +133,7 @@ func get_input():
 			speed = 600
 			is_running = true
 			
-		if jumps_remaining == 2: #not in the air
+		if not is_attacking and jumps_remaining == 2: #not in the air
 			if is_running:
 				run(false)
 			elif is_crouching:
@@ -138,7 +162,7 @@ func get_input():
 			speed = 600
 			is_running = true
 			
-		if jumps_remaining == 2: #not in the air
+		if not is_attacking and jumps_remaining == 2 : #not in the air
 			if is_running:
 				run(true)
 			elif is_crouching:
@@ -160,15 +184,34 @@ func get_input():
 	# Crouching
 	if Input.is_action_just_pressed("down"):
 		speed = 100
+		$default.disabled = true
 		is_crouching = true
 		
 	if Input.is_action_just_released("down"):
 		speed = 400
+		$default.disabled = false
 		is_crouching = false
 	
-	# next idea, roll? slide? shoot? punch?
+	
+	#Attacking
+	if Input.is_action_just_pressed("attack"):
+		$"hit/hit-area".disabled = false
+		is_attacking = true
+		attack()
+	
+	if Input.is_action_just_released("attack"):
+		yield(get_tree().create_timer(1), "timeout")
+		is_attacking = false
+		$"hit/hit-area".disabled = true
+		
 	
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	get_input()
 	velocity = move_and_slide(velocity,UP)
+
+
+func _on_hit_body_entered(body):
+	if body.name == "Slime":
+		body.queue_free()
+	pass # Replace with function body.
