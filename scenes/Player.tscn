@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Idle.png" type="Texture" id=2]
 [ext_resource path="res://assets/Walk.png" type="Texture" id=3]
 [ext_resource path="res://assets/Jump.png" type="Texture" id=4]
+[ext_resource path="res://assets/Run.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.3125, 43.5 )
@@ -46,6 +47,34 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("run:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "crouch"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("jump:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 6, 7 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -78,6 +107,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "run"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.3, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
 length = 0.5
@@ -103,12 +148,14 @@ position = Vector2( 251.688, 217 )
 shape = SubResource( 1 )
 
 [node name="idle" type="Sprite" parent="."]
+visible = false
 position = Vector2( 251, 182 )
 scale = Vector2( 1.19811, 1.22368 )
 texture = ExtResource( 2 )
 hframes = 8
 
 [node name="walk" type="Sprite" parent="."]
+visible = false
 position = Vector2( 264, 186 )
 scale = Vector2( 1.24336, 1.19531 )
 texture = ExtResource( 3 )
@@ -120,8 +167,17 @@ scale = Vector2( 1.28125, 1.33594 )
 texture = ExtResource( 4 )
 hframes = 8
 
+[node name="run" type="Sprite" parent="."]
+visible = false
+position = Vector2( 251, 181 )
+scale = Vector2( 1.27319, 1.27344 )
+texture = ExtResource( 5 )
+hframes = 8
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
+anims/crouch = SubResource( 7 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 5 )
+anims/run = SubResource( 6 )
 anims/walk = SubResource( 4 )
