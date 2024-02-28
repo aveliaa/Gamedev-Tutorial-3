@@ -29,7 +29,6 @@ func double_tap(direction,last_move_time):
 	var current_time = OS.get_ticks_msec() / 1000.0
 	
 	if Input.is_action_just_pressed(direction):
-		print(current_time)
 		if current_time - last_move_time < double_tap_threshold:
 			return true
 	
@@ -211,3 +210,4 @@ func attack():
 		$attack.flip_h = false
 		$"hit/hit-area-right".disabled = false
 	
+# playtested
