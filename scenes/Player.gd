@@ -1,11 +1,7 @@
 extends KinematicBody2D
 
-# TODO : enermy, game over, decor, attack, dash animation
 func _ready():
 	idle()
-	pass # Replace with function body.
-
-
 
 export (int) var speed = 400 #export
 export (int) var GRAVITY = 1200
@@ -29,87 +25,12 @@ var is_running = false
 var is_crouching = false
 var is_attacking = false
 
-
-func idle():
-	animation.play("idle")
-	$idle.show()
-	$walk.hide()
-	$jump.hide()
-	$run.hide()
-	$attack.hide()
-	
-	
-func walk(flip):
-	animation.play("walk")
-	$walk.flip_h = flip
-	$walk.show()
-	$idle.hide()
-	$jump.hide()
-	$run.hide()
-	$attack.hide()
-	
-func run(flip):
-	print("hi")
-	animation.play("run")
-	$run.flip_h = flip
-	$walk.hide()
-	$idle.hide()
-	$jump.hide()
-	$run.show()
-	$attack.hide()
-
-func crouch():
-	animation.play("crouch")
-	$walk.hide()
-	$idle.hide()
-	$run.hide()
-	$attack.hide()
-	
-	
-	if movement_history == "left":
-		$jump.flip_h = true
-	else:
-		$jump.flip_h = false
-	$jump.show()
-
-func jump():
-	animation.play("jump")
-	$walk.hide()
-	$idle.hide()
-	$run.hide()
-	$attack.hide()
-	
-	if movement_history == "left":
-		$jump.flip_h = true
-	else:
-		$jump.flip_h = false
-	$jump.show()
-	
-func attack():
-	animation.play("attack")
-	$walk.hide()
-	$idle.hide()
-	$run.hide()
-	$attack.show()
-	$jump.hide()
-	
-	if movement_history == "left":
-		$attack.flip_h = true
-		$"hit/hit-area-left".disabled = false
-	else:
-		$attack.flip_h = false
-		$"hit/hit-area-right".disabled = false
-	
-	
-
 func double_tap(direction,last_move_time):
 	var current_time = OS.get_ticks_msec() / 1000.0
 	
 	if Input.is_action_just_pressed(direction):
 		print(current_time)
 		if current_time - last_move_time < double_tap_threshold:
-
-			print("Double tap detected!") 
 			return true
 	
 	return false
@@ -124,7 +45,8 @@ func get_input():
 		jump()
 		velocity.y = jump_speed
 		jumps_remaining -= 1
-		
+	
+	# Moving Right
 	if Input.is_action_pressed("right"):
 		
 		movement_history = "right"
@@ -154,6 +76,7 @@ func get_input():
 		speed = 400
 		
 
+	# Moving Left
 	if Input.is_action_pressed("left"):
 		
 		movement_history = "left"
@@ -216,4 +139,72 @@ func _physics_process(delta):
 func _on_hit_body_entered(body):
 	if body.name == "Slime":
 		body.queue_free()
-	pass # Replace with function body.
+
+	
+# Sprite made separate to fit the character sheet
+
+func idle():
+	animation.play("idle")
+	$idle.show()
+	
+	$walk.hide()
+	$jump.hide()
+	$run.hide()
+	$attack.hide()
+	
+func walk(flip):
+	animation.play("walk")
+	$walk.flip_h = flip
+	$walk.show()
+	
+	$idle.hide()
+	$jump.hide()
+	$run.hide()
+	$attack.hide()
+	
+func run(flip):
+	animation.play("run")
+	$run.flip_h = flip
+	$run.show()
+	
+	$walk.hide()
+	$idle.hide()
+	$jump.hide()
+	$attack.hide()
+
+func crouch():
+	animation.play("crouch")
+	$jump.flip_h = (movement_history == "left")
+	$jump.show()
+	
+	$walk.hide()
+	$idle.hide()
+	$run.hide()
+	$attack.hide()
+
+func jump():
+	animation.play("jump")
+	$jump.flip_h = (movement_history == "left")
+	$jump.show()
+	
+	$walk.hide()
+	$idle.hide()
+	$run.hide()
+	$attack.hide()
+	
+func attack():
+	animation.play("attack")
+	$attack.show()
+	
+	$walk.hide()
+	$idle.hide()
+	$run.hide()
+	$jump.hide()
+	
+	if movement_history == "left":
+		$attack.flip_h = true
+		$"hit/hit-area-left".disabled = false
+	else:
+		$attack.flip_h = false
+		$"hit/hit-area-right".disabled = false
+	

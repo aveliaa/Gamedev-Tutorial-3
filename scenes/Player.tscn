@@ -186,7 +186,6 @@ position = Vector2( 253, 237 )
 shape = SubResource( 8 )
 
 [node name="idle" type="Sprite" parent="."]
-visible = false
 position = Vector2( 251, 182 )
 scale = Vector2( 1.19811, 1.22368 )
 texture = ExtResource( 2 )
@@ -214,6 +213,7 @@ texture = ExtResource( 5 )
 hframes = 8
 
 [node name="attack" type="Sprite" parent="."]
+visible = false
 position = Vector2( 258, 183 )
 scale = Vector2( 1.13867, 1.21094 )
 texture = ExtResource( 6 )
