@@ -144,7 +144,8 @@ func _on_hit_body_entered(body):
 # Sprite made separate to fit the character sheet
 
 func idle():
-	animation.play("idle")
+	
+	$idle.play("default")
 	$idle.show()
 	
 	$walk.hide()
