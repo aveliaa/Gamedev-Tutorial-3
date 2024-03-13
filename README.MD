@@ -26,7 +26,8 @@ Semua animasi di game ini dibuat dengan AnimationPlayer. Animasi-animasi meliput
 - player walk
 - player run
 - player attack
-Untuk menyesuaikan dengan instruksi, *player idle* diimplementasikan dengan AnimatedSprite. <br>
+
+<br>Untuk menyesuaikan dengan instruksi, *player idle* diimplementasikan dengan AnimatedSprite. <br>
 
 Efek audio dalam game ini meliputi:
 - background music
